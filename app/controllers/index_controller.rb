@@ -25,9 +25,9 @@ class IndexController < ApplicationController
   def search
 
     @gameserver = Gameserver.find_by_name(params[:query])
-
-
-    redirect_to @gameserver
+    render js: @gameserver
+    #render json: @gameserver
+#    redirect_to @gameserver
   #  Gameserver.reindex
   #  @gameservers = Gameserver.search params[:name]
   #  @gameservers.each do |server|
